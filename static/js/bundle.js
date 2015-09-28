@@ -7171,24 +7171,11 @@ var Candidates = React.createClass({
                     subcounty = filterBy.value;
 
                     break;
-                case "minDate":
-                    minDate = filterBy.value;
-                    date_range = true;
-                    break;
-                case "maxDate":
-                    maxDate = filterBy.value;
-                    date_range = true;
-                    break;
+
                 case "reporter_filter":
                     reporter_filter = filterBy.value;
                     break;
 
-                case "direction":
-                    status = filterBy.value;
-                    if (status === "0") {
-                        status = null;
-                    }
-                    break;
                 default:
                 // do nothing
             }
@@ -7205,12 +7192,6 @@ var Candidates = React.createClass({
 
             if (!_.isEmpty(reporter_filter)) {
                 filteredRows = _.findByValues(filteredRows, "identity", _.pluck(reporter_filter, "value"));
-            }
-
-            if (date_range && minDate) {
-                filteredRows = _.filter(filteredRows, function (data) {
-                    return new Date(data.date) >= minDate && new Date(data.date) <= maxDate;
-                });
             }
 
             if (district) {
@@ -7257,10 +7238,15 @@ var Candidates = React.createClass({
         this._filterRowsBy({ name: "parish", value: e.target.value });
     },
     _subcountyFilter: function _subcountyFilter(e) {
+        var subcounty = e.target.value;
+        if (e.target.value === "0") {
+            var subcounty = null;
+        } else {
+            currentFilterStore.setCurrentSubcounty(subcounty);
+        }
 
-        this.setState({ subcounty: e.target.value });
-        currentFilterStore.setCurrentSubcounty(e.target.value);
-        this._filterRowsBy({ name: "subcounty", value: e.target.value });
+        this.setState({ subcounty: subcounty });
+        this._filterRowsBy({ name: "subcounty", value: subcounty });
     },
 
     getStyles: function getStyles() {
@@ -7643,7 +7629,7 @@ var Candidates = React.createClass({
                     React.createElement(DropDownMenu, {
                         valueMember: 'id',
                         displayMember: 'name',
-                        onChange: this._suncountyFilter,
+                        onChange: this._subcountyFilter,
                         value: this.state.subcounty,
                         menuItems: this.state.subcounties })
                 ),
@@ -7676,7 +7662,7 @@ var Candidates = React.createClass({
                     { style: { marginBottom: "50" } },
                     React.createElement(Select, {
                         className: 'chpselect_data',
-                        placeholder: 'Select the Candidate(s)',
+                        placeholder: 'Select the Reporter(s)',
 
                         multi: true,
                         options: this.state.reporter_opts,
@@ -10046,7 +10032,7 @@ var CHANGE_EVENT = 'app_change';
 
 var _app = {};
 var _header = {};
-var API = "/reports.json";
+var API = "/reporters.json";
 var _reporters = {};
 var _initCalled = false;
 var _ = require("lodash");

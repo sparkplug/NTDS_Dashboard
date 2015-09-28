@@ -271,24 +271,12 @@ _filterRowsBy(filterBy) {
                 subcounty=filterBy.value;
 
                 break;
-            case "minDate":
-                minDate=filterBy.value;
-                date_range=true;
-                break
-            case "maxDate":
-                maxDate=filterBy.value;
-                date_range=true;
-                break;
+
             case "reporter_filter":
                 reporter_filter=filterBy.value;
                 break;
 
-            case "direction":
-                status=filterBy.value;
-                if(status==="0"){
-                    status=null;
-                }
-                break;
+
             default:
             // do nothing
         }
@@ -313,12 +301,7 @@ _filterRowsBy(filterBy) {
             filteredRows=_.findByValues(filteredRows, "identity", _.pluck(reporter_filter,"value"));
         }
 
-        if(date_range&&minDate){
-            filteredRows=_.filter(filteredRows, function(data){
-                return new Date(data.date) >= minDate && new Date(data.date) <= maxDate
-            });
 
-        }
 
         if(district)
         {
@@ -379,11 +362,17 @@ _parishFilter(e) {
 
 },
 _subcountyFilter(e) {
+    var subcounty = e.target.value;
+    if (e.target.value==="0"){
+        var subcounty=null;
+    }
+    else{
+        currentFilterStore.setCurrentSubcounty(subcounty);
+    }
 
 
-    this.setState({ subcounty: e.target.value });
-    currentFilterStore.setCurrentSubcounty(e.target.value);
-    this._filterRowsBy({name:"subcounty",value:e.target.value});
+    this.setState({ subcounty: subcounty });
+    this._filterRowsBy({name:"subcounty",value:subcounty});
 
 },
 
@@ -804,7 +793,7 @@ menuItems={districtFilters} />
 <DropDownMenu
 valueMember="id"
 displayMember="name"
-onChange={this._suncountyFilter}
+onChange={this._subcountyFilter}
 value={this.state.subcounty}
 menuItems={this.state.subcounties} />
 
@@ -849,7 +838,7 @@ label="Download CSV" />
 <div style={{marginBottom:"50"}}>
 <Select
 className="chpselect_data"
-placeholder="Select the Candidate(s)"
+placeholder="Select the Reporter(s)"
 
 multi={true}
 options={this.state.reporter_opts}

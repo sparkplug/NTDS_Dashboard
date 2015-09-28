@@ -8,7 +8,7 @@ var CHANGE_EVENT = 'app_change';
 
 var _app={};
 var _header={};
-var API ="/reports.json";
+var API ="/reporters.json";
 var _reporters={};
 var _initCalled = false;
 var _ = require("lodash");
