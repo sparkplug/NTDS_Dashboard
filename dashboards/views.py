@@ -66,7 +66,7 @@ def locations_json(request):
 
 def messages_json(request):
     with connection.cursor() as cursor:
-        query="select * from reporter_messages"
+        query="select * from reporter_messages_mat where direction ='I' order by date desc"
         cursor.execute(query)
         data = dictfetchall(cursor)
     return  HttpJSONResponse(data)
