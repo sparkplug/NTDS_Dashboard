@@ -43,7 +43,7 @@ def reports(request):
 
 def reporters_json(request):
     with connection.cursor() as cursor:
-        query="select * from ntds_reporters"
+        query="select distinct * from ntds_reporters_mat"
         cursor.execute(query)
         data = dictfetchall(cursor)
     return  HttpJSONResponse(data)
@@ -51,7 +51,7 @@ def reporters_json(request):
 
 def reports_json(request):
     with connection.cursor() as cursor:
-        query="select * from ntds_report"
+        query="select * from ntds_report_mat"
         cursor.execute(query)
         data = dictfetchall(cursor)
     return  HttpJSONResponse(data)
@@ -73,14 +73,14 @@ def messages_json(request):
 
 def diseases_report_json(request):
     with connection.cursor() as cursor:
-        query="select * from diseases_report"
+        query="select * from diseases_report_mat"
         cursor.execute(query)
         data = dictfetchall(cursor)
     return  HttpJSONResponse(data)
 
 def districts_report_json(request):
     with connection.cursor() as cursor:
-        query="select * from districts_report"
+        query="select * from districts_report_mat"
         cursor.execute(query)
         data = dictfetchall(cursor)
     return  HttpJSONResponse(data)
