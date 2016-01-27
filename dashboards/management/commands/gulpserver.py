@@ -18,7 +18,7 @@ class Command(StaticfilesRunserverCommand):
     def start_gulp(self):
         self.stdout.write('>>> Starting gulp')
         self.gulp_process = subprocess.Popen(
-            ['gulp  --gulpfile={0}/Gulpfile.js --base=.'.format(settings.PROJECT_DIR)],
+            ['gulp  --gulpfile={0}/ntds/Gulpfile.js --base=.'.format(settings.PROJECT_DIR)],
             shell=True,
             stdin=subprocess.PIPE,
             stdout=self.stdout,

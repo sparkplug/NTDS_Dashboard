@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
 var jszip  = require('jszip');
-var traceur = require('gulp-traceur');
 var react = require('gulp-react');
 var source = require('vinyl-source-stream');
 var concat = require('gulp-concat');
