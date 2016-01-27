@@ -7,12 +7,12 @@ class DataView extends React.Component {
     render() {
         let menuItems = [
             { route: '/disease_dashboard/diseases', text: 'All Diseases'},
-            { route: '/disease_dashboard/view/helminthiasis', text: 'Helminthiasis'},
-             { route: '/disease_dashboard/view/trachoma', text: 'Trachoma'},
-               { route: '/disease_dashboard/view/onchocerciasis', text: 'Onchocerciasis'},
-               { route: '/disease_dashboard/view/schistosomiasis', text: 'Schistosomiasis'},
-                { route: '/disease_dashboard/view/lymphatic', text: 'Lymphatic'},
-            { route: '/disease_dashboard/view/filariasis', text: 'Filariasis'},
+            { route: '/disease_dashboard/view/Helminthiasis', text: 'Helminthiasis'},
+             { route: '/disease_dashboard/view/Trachoma', text: 'Trachoma'},
+               { route: '/disease_dashboard/view/Onchocerciasis', text: 'Onchocerciasis'},
+               { route: '/disease_dashboard/view/Schistosomiasis', text: 'Schistosomiasis'},
+                { route: '/disease_dashboard/view/Lymphatic', text: 'Lymphatic'},
+            { route: '/disease_dashboard/view/Filariasis', text: 'Filariasis'},
 
 
         ];

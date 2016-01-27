@@ -7,7 +7,7 @@ class DataView extends React.Component {
     render() {
         let menuItems = [
             { route: '/district_dashboard/districts', text: 'All Districts'},
-            { route: '/district_dashboard/view/Kubuku', text: 'Kubuku'},
+            { route: '/district_dashboard/view/Kibuku', text: 'Kibuku'},
             { route: '/district_dashboard/view/Yumbe', text: 'Yumbe'},
 
 
