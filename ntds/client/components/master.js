@@ -79,13 +79,10 @@ class Master extends React.Component {
   render() {
     let styles = this.getStyles();
     let title =
-      this.context.router.isActive('/chps') ? 'CHPS Dashboard' :
-          this.context.router.isActive('/branches') ? 'Branches Dashboard' :
-              this.context.router.isActive('performance') ? 'Performance' :
-                  this.context.router.isActive('reports') ? 'Reporting' :
-                      this.context.router.isActive('data_verification') ? 'Data Verification' :
-      this.context.router.isActive('management') ? 'Management' :
-      this.context.router.isActive('home') ? 'Dashboard' : 'Dashboard';
+      this.context.router.isActive('/diseases') ? 'Diseases Dashboard' :
+          this.context.router.isActive('/districts') ? 'Districts Dashboard' :
+              this.context.router.isActive('/reporters') ? 'Reporters Dashboard' :
+      this.context.router.isActive('messages') ? 'Dashboard' : 'Dashboard';
 
 
     let logo=(
