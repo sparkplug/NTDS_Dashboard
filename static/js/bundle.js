@@ -5363,7 +5363,6 @@ var Candidates = React.createClass({
                         label: 'Download CSV' }),
                     React.createElement(ToolbarSeparator, null),
                     React.createElement(RaisedButton, {
-                        onTouchTap: this._download,
                         secondry: true,
                         linkButton: true,
                         href: '/media/raw_messages.csv',
@@ -5372,7 +5371,6 @@ var Candidates = React.createClass({
                         label: 'Raw Messages' }),
                     React.createElement(ToolbarSeparator, null),
                     React.createElement(RaisedButton, {
-                        secondry: true,
                         linkButton: true,
                         href: '/media/error_messages.csv',
                         secondary: true,

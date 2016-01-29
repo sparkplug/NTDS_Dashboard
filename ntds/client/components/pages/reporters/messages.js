@@ -781,7 +781,6 @@ secondry={true}
 label="Download CSV" />
     <ToolbarSeparator/>
     <RaisedButton
-onTouchTap={this._download}
 secondry={true}
 linkButton={true}
 href="/media/raw_messages.csv"
@@ -790,7 +789,6 @@ style={styles.button}
 label="Raw Messages" />
     <ToolbarSeparator/>
     <RaisedButton
-secondry={true}
 linkButton={true}
       href="/media/error_messages.csv"
       secondary={true}
