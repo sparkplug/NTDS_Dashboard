@@ -5186,7 +5186,7 @@ var Candidates = React.createClass({
 
         return React.createElement(
             Link,
-            { to: '/reporter_dashboar/view/6', query: { id: rowData.id } },
+            { to: '/reporter_dashboard/view/6', query: { id: rowData.id } },
             cellData
         );
     },
@@ -5314,7 +5314,7 @@ var Candidates = React.createClass({
         var directionFilters = [{ id: "0", name: "Filter By Status" }, { id: "O", name: "Outgoing" }, { id: "I", name: "Incoming" }];
 
         var dateFilters = [{ id: "0", name: "Filter By Date" }, { id: "1", name: "View Today" }, { id: "2", name: "View This Week" }, { id: "3", name: "View This Month" }, { id: "4", name: "View This Quarter" }, { id: "5", name: "View This Year" }];
-        var districtFilters = [{ id: "0", name: "Filter By District" }, { id: "Kubuku", name: "Kubuku" }, { id: "Yumbe", name: "Yumbe" }];
+        var districtFilters = [{ id: "0", name: "Filter By District" }, { id: "Kibuku", name: "Kibuku" }, { id: "Yumbe", name: "Yumbe" }];
 
         var sortDirArrow = '';
 
@@ -5354,35 +5354,30 @@ var Candidates = React.createClass({
                 ),
                 React.createElement(
                     ToolbarGroup,
-                    { key: 2, float: 'left' },
-                    React.createElement(ToolbarSeparator, null),
-                    React.createElement(DropDownMenu, {
-                        valueMember: 'id',
-                        displayMember: 'name',
-                        onChange: this._directionFilter,
-                        value: this.state.direction_filter,
-                        menuItems: directionFilters })
-                ),
-                React.createElement(
-                    ToolbarGroup,
-                    { key: 3, float: 'left' },
-                    React.createElement(ToolbarSeparator, null),
-                    React.createElement(DropDownMenu, {
-                        valueMember: 'id',
-                        displayMember: 'name',
-                        onChange: this._dateFilter,
-                        value: this.state.date_filter,
-                        menuItems: dateFilters })
-                ),
-                React.createElement(
-                    ToolbarGroup,
                     { key: 4, float: 'right' },
                     React.createElement(ToolbarSeparator, null),
                     React.createElement('a', { ref: 'download', onClick: this._downloadCSV.bind(this), href: 'javascript:void(0)' }),
                     React.createElement(RaisedButton, {
                         onTouchTap: this._download,
                         secondry: true,
-                        label: 'Download CSV' })
+                        label: 'Download CSV' }),
+                    React.createElement(ToolbarSeparator, null),
+                    React.createElement(RaisedButton, {
+                        onTouchTap: this._download,
+                        secondry: true,
+                        linkButton: true,
+                        href: '/media/raw_messages.csv',
+                        secondary: true,
+                        style: styles.button,
+                        label: 'Raw Messages' }),
+                    React.createElement(ToolbarSeparator, null),
+                    React.createElement(RaisedButton, {
+                        secondry: true,
+                        linkButton: true,
+                        href: '/media/error_messages.csv',
+                        secondary: true,
+                        style: styles.button,
+                        label: 'Messages With Errors' })
                 )
             ),
             React.createElement(

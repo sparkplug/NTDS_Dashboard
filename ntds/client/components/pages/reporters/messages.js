@@ -567,7 +567,7 @@ _renderHeader(label, cellDataKey) {
 _renderName(cellData,cellDataKey,rowData){
 
     return (
-        <Link to="/reporter_dashboar/view/6"  query={{id: rowData.id}}>{cellData}</Link>
+        <Link to="/reporter_dashboard/view/6"  query={{id: rowData.id}}>{cellData}</Link>
 );
 
 },
@@ -720,7 +720,7 @@ render()
     let directionFilters=[{id:"0",name:"Filter By Status"},{id:"O",name:"Outgoing"},{id:"I",name:"Incoming"}];
 
     let dateFilters=[{id:"0",name:"Filter By Date"},{id:"1",name:"View Today"},{id:"2",name:"View This Week"},{id:"3",name:"View This Month"},{id:"4",name:"View This Quarter"},{id:"5",name:"View This Year"}];
-    let districtFilters=[{id:"0",name:"Filter By District"},{id:"Kubuku",name:"Kubuku"},{id:"Yumbe",name:"Yumbe"}]
+    let districtFilters=[{id:"0",name:"Filter By District"},{id:"Kibuku",name:"Kibuku"},{id:"Yumbe",name:"Yumbe"}]
 
 
 
@@ -767,29 +767,8 @@ value={this.state.district}
 menuItems={districtFilters} />
 
 </ToolbarGroup>
-<ToolbarGroup key={2} float="left">
-<ToolbarSeparator/>
-<DropDownMenu
-valueMember="id"
-displayMember="name"
-onChange={this._directionFilter}
-value={this.state.direction_filter}
-menuItems={directionFilters} />
-</ToolbarGroup>
 
 
-
-
-<ToolbarGroup key={3} float="left">
-<ToolbarSeparator/>
-<DropDownMenu
-valueMember="id"
-displayMember="name"
-onChange={this._dateFilter}
-value={this.state.date_filter}
-menuItems={dateFilters} />
-
-</ToolbarGroup>
 
 
 <ToolbarGroup key={4} float="right">
@@ -800,6 +779,23 @@ menuItems={dateFilters} />
 onTouchTap={this._download}
 secondry={true}
 label="Download CSV" />
+    <ToolbarSeparator/>
+    <RaisedButton
+onTouchTap={this._download}
+secondry={true}
+linkButton={true}
+href="/media/raw_messages.csv"
+secondary={true}
+style={styles.button}
+label="Raw Messages" />
+    <ToolbarSeparator/>
+    <RaisedButton
+secondry={true}
+linkButton={true}
+      href="/media/error_messages.csv"
+      secondary={true}
+      style={styles.button}
+label="Messages With Errors" />
 
 
 </ToolbarGroup>
