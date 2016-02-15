@@ -2378,12 +2378,12 @@ var Pregnancies = React.createClass({
     this.refs.download.getDOMNode().click();
   },
   _downloadCSV: function _downloadCSV(event) {
-    var contents = jsonCSV.JsonToCsv(this.state.filteredRows, "Pregnancies.csv", true);
+    var contents = jsonCSV.JsonToCsv(this.state.filteredRows, "districts.csv", true);
 
     var URL = window.URL || window.webkitURL;
     var blob = new Blob([contents], { type: 'text/csv' });
     event.target.href = URL.createObjectURL(blob);
-    event.target.download = 'pregnancies.csv';
+    event.target.download = 'districts.csv';
   },
   _updateMinDate: function _updateMinDate(nill, date) {
     this.setState({
@@ -5234,7 +5234,7 @@ var Candidates = React.createClass({
         var URL = window.URL || window.webkitURL;
         var blob = new Blob([contents], { type: 'text/csv' });
         event.target.href = URL.createObjectURL(blob);
-        event.target.download = 'candidates.csv';
+        event.target.download = 'messages.csv';
     },
     _updateMinDate: function _updateMinDate(nill, date) {
         this.setState({
@@ -7504,7 +7504,7 @@ var Candidates = React.createClass({
         var URL = window.URL || window.webkitURL;
         var blob = new Blob([contents], { type: 'text/csv' });
         event.target.href = URL.createObjectURL(blob);
-        event.target.download = 'candidates.csv';
+        event.target.download = 'reporters.csv';
     },
     _updateMinDate: function _updateMinDate(nill, date) {
         this.setState({

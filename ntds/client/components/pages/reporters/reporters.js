@@ -659,7 +659,7 @@ _downloadCSV(event){
     var URL = window.URL || window.webkitURL;
     var blob = new Blob([contents], {type: 'text/csv'});
     event.target.href = URL.createObjectURL(blob);
-    event.target.download = 'candidates.csv';
+    event.target.download = 'reporters.csv';
 
 },
 _updateMinDate(nill, date) {

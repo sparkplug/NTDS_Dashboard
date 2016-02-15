@@ -517,12 +517,12 @@ _sortRowsBy(cellDataKey) {
    this.refs.download.getDOMNode().click();
   },
   _downloadCSV(event){
-    var contents=jsonCSV.JsonToCsv(this.state.filteredRows, "Pregnancies.csv", true);
+    var contents=jsonCSV.JsonToCsv(this.state.filteredRows, "districts.csv", true);
     
     var URL = window.URL || window.webkitURL;
     var blob = new Blob([contents], {type: 'text/csv'});
      event.target.href = URL.createObjectURL(blob);
-     event.target.download = 'pregnancies.csv';
+     event.target.download = 'districts.csv';
      
   },
 _updateMinDate(nill, date) {
