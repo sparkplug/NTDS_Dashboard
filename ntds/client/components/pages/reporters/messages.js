@@ -777,8 +777,10 @@ menuItems={districtFilters} />
 </a>
 <RaisedButton
 onTouchTap={this._download}
-secondry={true}
-label="Download CSV" />
+linkButton={true}
+secondary={true}
+style={styles.button}
+label="Download as CSV" />
     <ToolbarSeparator/>
     <RaisedButton
 secondry={true}

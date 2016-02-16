@@ -11,7 +11,7 @@ class DataView extends React.Component {
              { route: '/disease_dashboard/view/Trachoma', text: 'Trachoma'},
                { route: '/disease_dashboard/view/Onchocerciasis', text: 'Onchocerciasis'},
                { route: '/disease_dashboard/view/Schistosomiasis', text: 'Schistosomiasis'},
-                { route: '/disease_dashboard/view/Lymphatic', text: 'Lymphatic'},
+
             { route: '/disease_dashboard/view/Filariasis', text: 'Filariasis'},
 
 

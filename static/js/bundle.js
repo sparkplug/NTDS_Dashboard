@@ -531,7 +531,7 @@ var DataView = (function (_React$Component) {
     _createClass(DataView, [{
         key: 'render',
         value: function render() {
-            var menuItems = [{ route: '/disease_dashboard/diseases', text: 'All Diseases' }, { route: '/disease_dashboard/view/Helminthiasis', text: 'Helminthiasis' }, { route: '/disease_dashboard/view/Trachoma', text: 'Trachoma' }, { route: '/disease_dashboard/view/Onchocerciasis', text: 'Onchocerciasis' }, { route: '/disease_dashboard/view/Schistosomiasis', text: 'Schistosomiasis' }, { route: '/disease_dashboard/view/Lymphatic', text: 'Lymphatic' }, { route: '/disease_dashboard/view/Filariasis', text: 'Filariasis' }];
+            var menuItems = [{ route: '/disease_dashboard/diseases', text: 'All Diseases' }, { route: '/disease_dashboard/view/Helminthiasis', text: 'Helminthiasis' }, { route: '/disease_dashboard/view/Trachoma', text: 'Trachoma' }, { route: '/disease_dashboard/view/Onchocerciasis', text: 'Onchocerciasis' }, { route: '/disease_dashboard/view/Schistosomiasis', text: 'Schistosomiasis' }, { route: '/disease_dashboard/view/Filariasis', text: 'Filariasis' }];
 
             return React.createElement(PageWithNav, { menuItems: menuItems });
         }
@@ -1034,7 +1034,7 @@ var Diseases = React.createClass({
     var URL = window.URL || window.webkitURL;
     var blob = new Blob([contents], { type: 'text/csv' });
     event.target.href = URL.createObjectURL(blob);
-    event.target.download = 'pregnancies.csv';
+    event.target.download = 'Diseases.csv';
   },
   _updateMinDate: function _updateMinDate(nill, date) {
     this.setState({
@@ -5359,8 +5359,10 @@ var Candidates = React.createClass({
                     React.createElement('a', { ref: 'download', onClick: this._downloadCSV.bind(this), href: 'javascript:void(0)' }),
                     React.createElement(RaisedButton, {
                         onTouchTap: this._download,
-                        secondry: true,
-                        label: 'Download CSV' }),
+                        linkButton: true,
+                        secondary: true,
+                        style: styles.button,
+                        label: 'Download as CSV' }),
                     React.createElement(ToolbarSeparator, null),
                     React.createElement(RaisedButton, {
                         secondry: true,
