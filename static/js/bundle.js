@@ -531,7 +531,7 @@ var DataView = (function (_React$Component) {
     _createClass(DataView, [{
         key: 'render',
         value: function render() {
-            var menuItems = [{ route: '/disease_dashboard/diseases', text: 'All Diseases' }, { route: '/disease_dashboard/view/Helminthiasis', text: 'Helminthiasis' }, { route: '/disease_dashboard/view/Trachoma', text: 'Trachoma' }, { route: '/disease_dashboard/view/Onchocerciasis', text: 'Onchocerciasis' }, { route: '/disease_dashboard/view/Schistosomiasis', text: 'Schistosomiasis' }, { route: '/disease_dashboard/view/Filariasis', text: 'Filariasis' }];
+            var menuItems = [{ route: '/disease_dashboard/diseases', text: 'All Diseases' }, { route: '/disease_dashboard/view/Helminthiasis', text: 'Helminthiasis' }, { route: '/disease_dashboard/view/Trachoma', text: 'Trachoma' }, { route: '/disease_dashboard/view/Onchocerciasis', text: 'Onchocerciasis' }, { route: '/disease_dashboard/view/Schistosomiasis', text: 'Schistosomiasis' }, { route: '/disease_dashboard/view/Lymphatic', text: 'Lymphatic' }];
 
             return React.createElement(PageWithNav, { menuItems: menuItems });
         }
