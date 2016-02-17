@@ -1029,12 +1029,14 @@ var Diseases = React.createClass({
     this.refs.download.getDOMNode().click();
   },
   _downloadCSV: function _downloadCSV(event) {
-    var contents = jsonCSV.JsonToCsv(this.state.filteredRows, "Diseases.csv", true);
+    var path = this.context.router.getCurrentPath();
+    var name = path.split("/").splice(-1, 1);
+    var contents = jsonCSV.JsonToCsv(this.state.filteredRows, name + '.csv', true);
 
     var URL = window.URL || window.webkitURL;
     var blob = new Blob([contents], { type: 'text/csv' });
     event.target.href = URL.createObjectURL(blob);
-    event.target.download = 'Diseases.csv';
+    event.target.download = name + '.csv';
   },
   _updateMinDate: function _updateMinDate(nill, date) {
     this.setState({
@@ -1688,12 +1690,14 @@ var Diseases = React.createClass({
         this.refs.download.getDOMNode().click();
     },
     _downloadCSV: function _downloadCSV(event) {
-        var contents = jsonCSV.JsonToCsv(this.state.filteredRows, "Diseases.csv", true);
+        var path = this.context.router.getCurrentPath();
+        var name = path.split("/").splice(-1, 1);
+        var contents = jsonCSV.JsonToCsv(this.state.filteredRows, name + ".csv", true);
 
         var URL = window.URL || window.webkitURL;
         var blob = new Blob([contents], { type: 'text/csv' });
         event.target.href = URL.createObjectURL(blob);
-        event.target.download = 'Diseases.csv';
+        event.target.download = name + ".csv";
     },
     _updateMinDate: function _updateMinDate(nill, date) {
         this.setState({
@@ -2378,7 +2382,9 @@ var Pregnancies = React.createClass({
     this.refs.download.getDOMNode().click();
   },
   _downloadCSV: function _downloadCSV(event) {
-    var contents = jsonCSV.JsonToCsv(this.state.filteredRows, "districts.csv", true);
+    var path = this.context.router.getCurrentPath();
+    var name = path.split("/").splice(-1, 1);
+    var contents = jsonCSV.JsonToCsv(this.state.filteredRows, name + ".csv", true);
 
     var URL = window.URL || window.webkitURL;
     var blob = new Blob([contents], { type: 'text/csv' });
@@ -3043,12 +3049,14 @@ var View_district = React.createClass({
     },
 
     _downloadCSV: function _downloadCSV(event) {
-        var contents = jsonCSV.JsonToCsv(this.state.filteredRows, "districts.csv", true);
+        var path = this.context.router.getCurrentPath();
+        var name = path.split("/").splice(-1, 1);
+        var contents = jsonCSV.JsonToCsv(this.state.filteredRows, name + ".csv", true);
 
         var URL = window.URL || window.webkitURL;
         var blob = new Blob([contents], { type: 'text/csv' });
         event.target.href = URL.createObjectURL(blob);
-        event.target.download = 'districts.csv';
+        event.target.download = name + ".csv";
     },
     _updateMinDate: function _updateMinDate(nill, date) {
         this.setState({

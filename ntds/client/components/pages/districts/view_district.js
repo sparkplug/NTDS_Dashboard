@@ -530,12 +530,14 @@ componentDidUpdate(prevProps){
 },
 
 _downloadCSV(event){
-    var contents=jsonCSV.JsonToCsv(this.state.filteredRows, "districts.csv", true);
+      var path = this.context.router.getCurrentPath();
+    var name=path.split("/").splice(-1,1);
+    var contents=jsonCSV.JsonToCsv(this.state.filteredRows, name+".csv", true);
 
     var URL = window.URL || window.webkitURL;
     var blob = new Blob([contents], {type: 'text/csv'});
     event.target.href = URL.createObjectURL(blob);
-    event.target.download = 'districts.csv';
+    event.target.download = name+".csv";
 
 },
 _updateMinDate(nill, date) {
