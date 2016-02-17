@@ -1693,7 +1693,7 @@ var Diseases = React.createClass({
         var URL = window.URL || window.webkitURL;
         var blob = new Blob([contents], { type: 'text/csv' });
         event.target.href = URL.createObjectURL(blob);
-        event.target.download = 'pregnancies.csv';
+        event.target.download = 'Diseases.csv';
     },
     _updateMinDate: function _updateMinDate(nill, date) {
         this.setState({
@@ -3043,12 +3043,12 @@ var View_district = React.createClass({
     },
 
     _downloadCSV: function _downloadCSV(event) {
-        var contents = jsonCSV.JsonToCsv(this.state.filteredRows, "View_district.csv", true);
+        var contents = jsonCSV.JsonToCsv(this.state.filteredRows, "districts.csv", true);
 
         var URL = window.URL || window.webkitURL;
         var blob = new Blob([contents], { type: 'text/csv' });
         event.target.href = URL.createObjectURL(blob);
-        event.target.download = 'pregnancies.csv';
+        event.target.download = 'districts.csv';
     },
     _updateMinDate: function _updateMinDate(nill, date) {
         this.setState({
