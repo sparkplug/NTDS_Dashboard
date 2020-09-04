@@ -34,7 +34,7 @@
     "moment": "^2.10.6",
     "npm": "^2.13.3",
     "offline": "0.0.1",
-    "react": "^0.13.3",
+    "react": "^0.14.9",
     "react-d3": "^0.3.1",
     "react-d3-components": "^0.4.8",
     "react-tap-event-plugin": "^0.1.7"
